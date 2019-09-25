@@ -1,7 +1,8 @@
 ﻿  Saver.cpp
-     Creating library D:\Code\Assignments\Assignment1\SAVER\x64\Release\SAVER.lib and object D:\Code\Assignments\Assignment1\SAVER\x64\Release\SAVER.exp
+     Creating library D:\Code\Assignments\Assignment1\AssignmentDLLLoadSave\SAVER\x64\Release\SAVER.lib and object D:\Code\Assignments\Assignment1\AssignmentDLLLoadSave\SAVER\x64\Release\SAVER.exp
   Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 277 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  269 of 277 functions (97.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  SAVER.vcxproj -> D:\Code\Assignments\Assignment1\SAVER\x64\Release\SAVER.dll
+  SAVER.vcxproj -> D:\Code\Assignments\Assignment1\AssignmentDLLLoadSave\SAVER\x64\Release\SAVER.dll

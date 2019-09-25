@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 using System.Runtime.InteropServices;
-using System.Text;
 using System;
 using System.Collections.Generic;
 
@@ -15,9 +14,11 @@ public class SaveMove : MonoBehaviour
     static extern void SetupRecieve(Action<float, float, float> action);
 
 
-    private Transform playerTransform;
-    private Rigidbody playerBody;
+    public Transform playerTransform;
+    public Rigidbody playerBody;
 
+    static public Vector3 pos = new Vector3(0,0,0);
+    static public bool update = false;
     public float moveSpeed = 1;
 
     // Start is called before the first frame update
@@ -55,11 +56,18 @@ public class SaveMove : MonoBehaviour
             SavePosition(playerTransform.position.x, playerTransform.position.y, playerTransform.position.z );
         }
 
+        if (update) {
+            playerTransform.localPosition = pos;
+            update = false;
+        }
     }
 
-    void RecievePosition(float px, float py, float pz) {
-        Debug.Log("Dot Cat");
-        Vector3 tempPos = new Vector3(px, py, pz);
-        playerTransform.position = tempPos;
+    static void RecievePosition(float px, float py, float pz) {
+        Debug.Log(px.ToString());
+        Debug.Log(py.ToString());
+        Debug.Log(pz.ToString());
+        pos = new Vector3(px, py, pz);
+        update = true;
+        
     }
 }

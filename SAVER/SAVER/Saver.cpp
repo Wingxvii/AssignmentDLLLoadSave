@@ -22,10 +22,11 @@ void Saver::RequestPosition()
 	save.open("save.txt");
 	string data;
 
-	getline(save, data);
+	if (getline(save, data)) {
+		vector<string> parsedData = tokenize(data);
+		recieveData(std::stof(parsedData[0]), std::stof(parsedData[1]), std::stof(parsedData[2]));
+	}
 
-	vector<string> parsedData = tokenize(data);
-	recieveData(std::stof(parsedData[0]), std::stof(parsedData[1]), std::stof(parsedData[2]));
 	save.close();
 
 }
@@ -35,7 +36,7 @@ void Saver::SavePosition(float x, float y, float z)
 	std::ofstream save;
 	save.open("save.txt");
 	save.clear();
-	save << to_string(x) << "," << to_string(y) << "," << to_string(z);
+	save << to_string(x) << "," << to_string(y) << "," << to_string(z) << ",";
 	save.close();
 
 }
